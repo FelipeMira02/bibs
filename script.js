@@ -56,7 +56,12 @@ async function loadSong() {
     if (!response.ok) throw new Error("Não foi possível carregar o catálogo.");
     const songs = await response.json();
     const index = ((daysSinceFirstDay % songs.length) + songs.length) % songs.length;
-    const song = songs[index];
+    const birthdayDate = new Intl.DateTimeFormat("sv-SE", {
+      timeZone: "America/Sao_Paulo", year: "numeric", month: "2-digit", day: "2-digit",
+    }).format(new Date());
+    const song = birthdayDate === "2026-09-13"
+      ? { title: "Parabéns da Xuxa", artist: "Xuxa", file: "audio/parabens-da-xuxa.mp3" }
+      : songs[index];
 
     document.querySelector("#song-title").textContent = song.title;
     document.querySelector("#artist").textContent = song.artist;
@@ -109,3 +114,4 @@ document.querySelector("#today").textContent = new Intl.DateTimeFormat("en-US", 
 }).format(now).toUpperCase();
 
 loadSong();
+
