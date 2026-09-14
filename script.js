@@ -28,7 +28,6 @@ const noteEndings = [
   "e espero que ela faça você sorrir nem que seja só um pouquinho.",
   "para você sentir meu abraço em cada pedacinho dela.",
   "porque estar na sua vida é uma das minhas partes favoritas.",
-  "e deixar o seu dia mais leve é tudo o que eu queria agora.",
   "com aquele lembrete diário: você é muito, muito especial para mim.",
   "porque até os dias comuns ficam lindos quando penso em nós.",
   "e ela vai ficar aqui fazendo companhia até eu poder fazer isso pessoalmente.",
