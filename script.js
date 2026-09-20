@@ -37,6 +37,8 @@ const noteEndings = [
 ];
 
 function noteForDay(index) {
+  const dateKey = new Intl.DateTimeFormat("sv-SE", { timeZone: "America/Sao_Paulo", year: "numeric", month: "2-digit", day: "2-digit" }).format(now);
+  if (dateKey === "2026-09-20") return "Você bem sabe que eu te desejo Está escrito no meu olhar O teu sorriso é um paraíso Onde contigo eu queria estar Ai, quem me dera se eu fosse o céu Você seria o meu luar Eu te quero só pra mim Como as ondas são do mar";
   const beginning = noteBeginnings[index % noteBeginnings.length];
   const ending = noteEndings[Math.floor(index / noteBeginnings.length) % noteEndings.length];
   return `${beginning} ${ending}`;
