@@ -62,7 +62,9 @@ async function loadSong() {
     }).format(new Date());
     const song = birthdayDate === "2026-09-13"
       ? { title: "Parabéns da Xuxa", artist: "Xuxa", file: "audio/parabens-da-xuxa.mp3" }
-      : songs[index];
+      : birthdayDate === "2026-10-06"
+        ? songs.find((item) => item.title === "august" && item.artist === "Taylor Swift") ?? songs[index]
+        : songs[index];
 
     document.querySelector("#song-title").textContent = song.title;
     document.querySelector("#artist").textContent = song.artist;
